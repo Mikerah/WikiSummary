@@ -11,6 +11,15 @@ def create_optional_arguments(parser):
 
     parser.add_argument('-rf', '--forever', help='display a random article until the user types stop')
     
+def choice(args):
+    """ Given a namespace, determine what to do based of the parameters given. """
+    if args.random:
+        return get_random_article(args.random)
+    elif args.read:
+        return get_wanted_article(args.read)
+    elif args.forever:
+        return get_random_articles(args.forever)
+    
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Read Wikipedia Articles in your command prompt.")
     create_optional_arguments(parser)
