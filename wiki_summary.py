@@ -9,7 +9,8 @@ def create_optional_arguments(parser):
                         
     parser.add_argument('-r', '--read', help='display the specified summarized wikipedia article', type=str)
 
-    parser.add_argument('-rf', '--forever', help='display a random article until the user types stop', action="store_true")
+    parser.add_argument('-rf', '--forever', help='display a random article until the user types stop', \
+                        action="store_true")
 
 def get_random_articles_v1(number_of_articles_wanted):
     """Given the wanted number of articles returned, get random wikipedia articles"""
