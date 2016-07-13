@@ -1,6 +1,5 @@
 import argparse
 import wikipedia
-import random
 
 def create_optional_arguments(parser):
     """ Given a parser, create optional arguments."""
@@ -43,6 +42,14 @@ def get_random_articles_v2():
             print(wikipedia.summary(wikipedia.random()))
             print()
             ans = input('Press enter to continue or stop to stop: ')
+            
+def get_wanted_article(search_term):
+    """Given a search term, find the associated article"""
+    list_of_associated_articles = wikipedia.search(search_term)
+    wanted_article = list_of_associated_articles[0]
+    print(wikipedia.summary(wanted_article))
+    print()
+    
 def choice(args):
     """ Given a namespace, determine what to do based of the parameters given. """
     if args.random:
