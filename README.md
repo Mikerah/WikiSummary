@@ -20,7 +20,7 @@ Lastly, use python to use WikiSummary <br />
 3. `python wiki_summary.py -rf`: To read an indefinite amount of random wikipedia articles until the user types stop <br />
 4. `python wiki_summary.py -h`: For help 
 
-[[https://github.com/Mikerah/WikiSummary/tree/master/docs/sample_output.gif]]
+![Alt text](docs/sample_output.gif?raw=true)
 
 ## Requirements
 Have python 3.5 installed, along with pip.
