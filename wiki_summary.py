@@ -21,7 +21,7 @@ def get_random_articles_v1(number_of_articles_wanted):
         try:
             for a in list_of_articles:
                 article = a[:]
-                if ('disambiguation' in a) or ('it may refer to:' in a):
+                if ('disambiguation' in wikipedia.page(a).title) or ('it may refer to' in wikipedia.page(a).title):
                     list_of_articles.remove(a)
                     list_of_articles.append(wikipedia.random())
                     
