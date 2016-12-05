@@ -1,5 +1,6 @@
 import argparse
 import wikipedia
+import sys
 
 
 def create_optional_arguments(parser):
@@ -50,10 +51,13 @@ def get_random_articles_v2():
 
 def get_wanted_article(search_term):
     """Given a search term, find the associated article"""
-    list_of_associated_articles = wikipedia.search(search_term)
-    wanted_article = list_of_associated_articles[0]
-    print(wikipedia.summary(wanted_article))
-    print()
+    try:
+        list_of_associated_articles = wikipedia.search(search_term)
+        wanted_article = list_of_associated_articles[0]
+        print(wikipedia.summary(wanted_article))
+    except wikipedia.exceptions.DisambiguationError as disambiguation:
+        sys.exit("Unfortunately your request has led to a disambiguation, "
+                 "please refine your search further:\n{}".format(disambiguation))
 
 
 def choice(args):
