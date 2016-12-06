@@ -26,4 +26,4 @@ Lastly, use python to use WikiSummary <br />
 Have python 3.5 installed, along with pip.
 
 ## How to contribute
-There are a lot of bugs in this simple program and a lot of improvements can be made. You can help my submitting a pull request and reporting issues.
+There are a lot of bugs in this simple program and a lot of improvements can be made. You can help me submitting a pull request and reporting issues.
