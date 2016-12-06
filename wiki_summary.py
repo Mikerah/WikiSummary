@@ -9,7 +9,7 @@ def create_optional_arguments(parser):
     parser.add_argument('-R', '--random', help='display n random wikipedia articles (1 <= n <= 10)',
                         type=int, choices=[i for i in range(1,11)])
                         
-    parser.add_argument('-r', '--read', help='display the specified summarized wikipedia article', type=str)
+    parser.add_argument('-r', '--read', help='display the specified summarized wikipedia article', type=str, nargs='+')
 
     parser.add_argument('-rf', '--forever', help='display a random article until the user types stop',
                         action="store_true")
@@ -51,6 +51,7 @@ def get_random_articles_v2():
 
 def get_wanted_article(search_term):
     """Given a search term, find the associated article"""
+    search_term = " ".join(search_term)
     try:
         list_of_associated_articles = wikipedia.search(search_term)
         wanted_article = list_of_associated_articles[0]
